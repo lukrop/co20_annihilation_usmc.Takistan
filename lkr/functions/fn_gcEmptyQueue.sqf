@@ -17,11 +17,16 @@
 	// check if the unit is really dead
 	if(!alive _x) then {
 		if(lkr_gc_debug) then {["Deleting %1", _x] call BIS_fnc_logFormat};
-		_x spawn {
-			// hide body and delete object
-			hideBody _this;
-			sleep 5;
-			deleteVehicle _this;
+
+		// if it's a man it has a body, let's hide it first :o)
+		if(_x isKindOf "Man") then {
+			_x spawn {
+				hideBody _this;
+				sleep 5;
+				deleteVehicle _this;
+			};
+		} else {
+			deleteVehicle _x;
 		};
 	};
 } forEach lkr_gc_queue;

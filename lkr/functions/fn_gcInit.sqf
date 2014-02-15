@@ -17,9 +17,9 @@
 // only run the gc on the server
 if(!isServer) exitWith{};
 // Disable/Enable debug messages
-lkr_gc_debug = true;
+lkr_gc_debug = false;
 // maximum size of the queue
-lkr_gc_max_size = 2;
+lkr_gc_max_size = 20;
 // intervall at which the queue is checked
 lkr_gc_intervall = 60;
 // start with a empty queue
