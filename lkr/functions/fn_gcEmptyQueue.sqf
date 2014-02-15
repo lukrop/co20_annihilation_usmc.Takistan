@@ -14,10 +14,13 @@
 */
 
 {
-	// hide body and delete object
-	hideBody _x;
-	sleep 5;
-	deleteVehicle _x;
+	// check if the unit is really dead
+	if(!alive _x) then {
+		// hide body and delete object
+		hideBody _x;
+		sleep 5;
+		deleteVehicle _x;
+	};
 } forEach lkr_gc_queue;
 
 // empty the queue

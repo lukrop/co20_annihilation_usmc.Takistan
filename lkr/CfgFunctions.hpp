@@ -10,6 +10,5 @@ class lkr
 		class gcMonitor {};
 		class gcAdd {};
 		class gcEmptyQueue {};
-		class spawnEnemyAmbientPatrol {};
 	};
 };
