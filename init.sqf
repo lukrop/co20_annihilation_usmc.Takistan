@@ -13,8 +13,6 @@
 	-
 */
 
-#include "config.sqf"
-
 // disable saving
 enableSaving [false, false];
 
@@ -28,6 +26,9 @@ call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
 
 // wait until the parameters have been initialized
 waitUntil {!isNil "param_btc_mobile_respawn_vas"};
+
+// include configuration (class names and so on)
+#include "config.sqf"
 
 // setup random roadside IEDs
 if(param_ied == 1) then {
@@ -61,19 +62,10 @@ if(param_revive == 1) then {
 			[lkr_mhq, 120, 1, {call lkr_fnc_initMHQ}] call lkr_fnc_ICE_vehRespawn;
 		};
 	};
-
 	// setup the flag to allow teleport to mhq
 	BTC_objects_actions_west = [lkr_flag];
-	BTC_objects_actions_east = [];
-	BTC_objects_actions_guer = [];
-	BTC_objects_actions_civ  = [];
-
 	// set the mhq vec as mobile respawn
 	BTC_vehs_mobile_west = [lkr_mhq];
-	BTC_vehs_mobile_east = [];
-	BTC_vehs_mobile_guer = [];
-	BTC_vehs_mobile_civ  = [];
-
 };
 
 // init FAR revive
