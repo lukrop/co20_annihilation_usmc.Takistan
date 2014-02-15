@@ -1,0 +1,48 @@
+/*
+  File: description.ext
+  Author: lukrop
+
+  License: see LICENSE.txt
+  Description:
+  Mission description file
+
+  Parameter(s):
+  -
+
+  Returns:
+  -
+*/
+
+respawn = BASE;
+respawndelay = 5;
+respawndialog = 0;
+//disabledAI = true;
+enableDebugConsole = 1;
+
+author="lukrop";
+onLoadName = "Annihilation USMC";
+onLoadMission = "Complete random missions.<br/>Version: 0.5";
+loadScreen = "loadingscreen.jpg";
+
+
+class Header
+{
+	gameType=Coop;
+	minPlayers=1;
+	maxPlayers=20;
+};
+
+
+class CfgFunctions
+{
+	#include "VAS\cfgfunctions.hpp"
+	#include "VVS\Functions.h"
+	#include "taw_vd\CfgFunctions.hpp"
+	#include "f\CfgFunctions.hpp"
+};
+
+#include "VAS\menu.hpp"
+#include "VVS\menu.h"
+#include "taw_vd\dialog.hpp"
+
+#include "parameters.hpp"
