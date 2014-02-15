@@ -28,15 +28,16 @@ class Mission
 		forecastWaves=0.099999994;
 		forecastLightnings=0.099999994;
 		year=2014;
-		day=28;
-		hour=18;
+		month=4;
+		day=2;
+		hour=6;
 		minute=0;
 		startFogDecay=0.0049999999;
 		forecastFogDecay=0.0049999999;
 	};
 	class Groups
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			side="WEST";
@@ -397,6 +398,24 @@ class Mission
 				};
 			};
 		};
+		class Item8
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={8256.7549,296.04001,2133.4792};
+					id=20;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					init="""lkr_base_zone"" setMarkerAlpha 0; ""lkr_ied_zone"" setMarkerAlpha 0;";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
@@ -405,7 +424,7 @@ class Mission
 		{
 			position[]={8266.0498,296.04001,2120.3264};
 			special="NONE";
-			id=20;
+			id=21;
 			side="EMPTY";
 			vehicle="Flag_US_F";
 			leader=1;
@@ -417,7 +436,7 @@ class Mission
 			position[]={8261.6865,296.04001,2117.9541};
 			azimut=-31.671885;
 			special="NONE";
-			id=21;
+			id=22;
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			leader=1;
@@ -429,7 +448,7 @@ class Mission
 		{
 			position[]={8231.0645,296.04001,2091.052};
 			azimut=34.382198;
-			id=22;
+			id=23;
 			side="EMPTY";
 			vehicle="B_Truck_01_mover_F";
 			lock="LOCKED";
@@ -441,7 +460,7 @@ class Mission
 		{
 			position[]={8223.1338,296.04001,2042.2706};
 			azimut=-210.561;
-			id=23;
+			id=24;
 			side="EMPTY";
 			vehicle="B_Truck_01_mover_F";
 			lock="LOCKED";
@@ -454,7 +473,7 @@ class Mission
 			position[]={8253.0313,296.04001,2119.5532};
 			azimut=-27.522301;
 			special="NONE";
-			id=24;
+			id=25;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -466,7 +485,7 @@ class Mission
 			position[]={8258.1094,296.04001,2122.2021};
 			azimut=-27.522301;
 			special="NONE";
-			id=25;
+			id=26;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -478,7 +497,7 @@ class Mission
 			position[]={8263.1855,296.04001,2124.896};
 			azimut=-27.522301;
 			special="NONE";
-			id=26;
+			id=27;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -490,7 +509,7 @@ class Mission
 			position[]={8268.2666,296.04001,2127.5898};
 			azimut=-27.522301;
 			special="NONE";
-			id=27;
+			id=28;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -502,7 +521,7 @@ class Mission
 			position[]={8273.3506,296.04001,2130.2434};
 			azimut=-27.522301;
 			special="NONE";
-			id=28;
+			id=29;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -514,7 +533,7 @@ class Mission
 			position[]={8276.7939,296.04001,2127.6975};
 			azimut=62.361301;
 			special="NONE";
-			id=29;
+			id=30;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -526,7 +545,7 @@ class Mission
 			position[]={8247.9727,296.04001,2116.8899};
 			azimut=-27.522301;
 			special="NONE";
-			id=30;
+			id=31;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -538,7 +557,7 @@ class Mission
 			position[]={8248.0176,296.04001,2112.5872};
 			azimut=62.6525;
 			special="NONE";
-			id=31;
+			id=32;
 			side="EMPTY";
 			vehicle="Land_HBarrier_5_F";
 			leader=1;
@@ -548,7 +567,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=2;
+		items=6;
 		class Item0
 		{
 			position[]={8221.5303,296.04001,2106.8625};
@@ -562,6 +581,45 @@ class Mission
 			name="lkr_vvs_air_spawn";
 			type="Empty";
 			angle=152.63959;
+		};
+		class Item2
+		{
+			position[]={8263.9697,296.04001,2119.1201};
+			name="lkr_base_marker";
+			text="Base/Gear/Flag";
+			type="b_hq";
+		};
+		class Item3
+		{
+			position[]={8266.3594,296.04001,2115.0703};
+			name="respawn_west";
+			type="Empty";
+			angle=-18.227777;
+		};
+		class Item4
+		{
+			position[]={8037.5498,296.04001,1983.0742};
+			name="lkr_base_zone";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorBlue";
+			fillName="Border";
+			a=800;
+			b=600;
+			angle=-29.0998;
+			drawBorder=1;
+		};
+		class Item5
+		{
+			position[]={6367.6763,289.64023,6472.0283};
+			name="lkr_ied_zone";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="Border";
+			a=6000;
+			b=6000;
+			drawBorder=1;
 		};
 	};
 };

@@ -32,7 +32,7 @@ class Params {
   
    class param_weather {
     title = "  - Weather";
-    values[] = {0,1,2,3,4,5};
+    values[] = {0,1,2,3,4};
     texts[] = {"Clear","Overcast","Rain","Fog","Random"};
     default = 1;
     code = "param_weather = %1";
@@ -46,6 +46,7 @@ class Params {
     code = "param_ied = %1";
   };
 
+  /*
   class param_civilians {
     title="  - Civilians in towns";
     values[] = {0,1};
@@ -53,6 +54,7 @@ class Params {
     default = 0;
     code = "param_civilians = %1";
   };
+  */
   
   class param_category_enemy {
     title = "Enemy force:";
