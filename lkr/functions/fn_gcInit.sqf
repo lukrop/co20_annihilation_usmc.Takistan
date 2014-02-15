@@ -16,13 +16,16 @@
 
 // only run the gc on the server
 if(!isServer) exitWith{};
-
+// Disable/Enable debug messages
+lkr_gc_debug = true;
 // maximum size of the queue
-lkr_gc_max_size = 20;
+lkr_gc_max_size = 2;
 // intervall at which the queue is checked
 lkr_gc_intervall = 60;
 // start with a empty queue
 lkr_gc_queue = [];
 
+
+if(lkr_gc_debug) then {"Starting lkr garbage collector." call BIS_fnc_log};
 // start the monitoring of the queue
-call lkr_fnc_gcMonitor;
+objNull spawn lkr_fnc_gcMonitor;

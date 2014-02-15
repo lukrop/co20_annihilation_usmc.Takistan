@@ -18,6 +18,7 @@
 while {true} do {
 	// check if the queue is full
 	if(count lkr_gc_queue > lkr_gc_max_size) then {
+		if(lkr_gc_debug) then {"Queue full. Deleting queue contents." call BIS_fnc_log};
 		// empty the queue
 		call lkr_fnc_gcEmptyQueue;
 	};

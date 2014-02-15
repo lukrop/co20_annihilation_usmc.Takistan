@@ -14,4 +14,5 @@
 	-
 */
 
+if(lkr_gc_debug) then {["Adding %1 to queue", _this] call BIS_fnc_logFormat};
 lkr_gc_queue = lkr_gc_queue + [_this];

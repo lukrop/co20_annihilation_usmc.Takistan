@@ -54,7 +54,6 @@ if(param_revive == 1) then {
 	if(param_btc_mobile_respawn == 1) then {
 		// spawn the mobile respawn vehicle
 		if(isServer) then {
-			"spawning mhq" call BIS_fnc_log;
 			lkr_mhq = lkr_mhq_vehicle_C createVehicle (getMarkerPos "lkr_mhq_spawn");
 			// init the mhq
 			lkr_mhq call lkr_fnc_initMHQ;
