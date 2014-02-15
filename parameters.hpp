@@ -70,7 +70,8 @@ class Params {
     default = 0;
     code = "param_enemy_faction = %1";
   };
-  
+
+  /*
   class param_enemy_count {
     title = "  - Count";
     values[] = {0,1,2,3};
@@ -78,6 +79,7 @@ class Params {
     default = 1;
     code = "param_enemy_count = %1";
   };
+  */
   
   class param_enemy_skill {
     title = "  - Skill";

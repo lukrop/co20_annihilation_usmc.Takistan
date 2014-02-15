@@ -7,7 +7,8 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Soft_F_Gamma_HEMTT",
-		"A3_Structures_F_Mil_Fortification"
+		"A3_Structures_F_Mil_Fortification",
+		"A3_Armor_F_Panther"
 	};
 	addOnsAuto[]=
 	{
@@ -15,7 +16,8 @@ class Mission
 		"A3_Structures_F_Mil_Flags",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Soft_F_Gamma_HEMTT",
-		"A3_Structures_F_Mil_Fortification"
+		"A3_Structures_F_Mil_Fortification",
+		"A3_Armor_F_Panther"
 	};
 	randomSeed=6231883;
 	class Intel
@@ -412,14 +414,14 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="""lkr_base_zone"" setMarkerAlpha 0; ""lkr_ied_zone"" setMarkerAlpha 0;";
+					init="""lkr_base_zone"" setMarkerAlpha 0; ""lkr_island_zone"" setMarkerAlpha 0;";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=12;
+		items=17;
 		class Item0
 		{
 			position[]={8266.0498,296.04001,2120.3264};
@@ -564,10 +566,60 @@ class Mission
 			skill=0.60000002;
 			init="this enableSimulation false";
 		};
+		class Item12
+		{
+			position[]={8246.1348,296.04001,2056.3215};
+			azimut=58.946903;
+			id=33;
+			side="EMPTY";
+			vehicle="B_APC_Tracked_01_CRV_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item13
+		{
+			position[]={8310.6855,296.04001,2090.3442};
+			azimut=149.65678;
+			id=34;
+			side="EMPTY";
+			vehicle="B_Truck_01_ammo_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item14
+		{
+			position[]={8301.0449,296.04001,2084.7732};
+			azimut=-210.84093;
+			id=35;
+			side="EMPTY";
+			vehicle="B_Truck_01_fuel_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item15
+		{
+			position[]={8290.4111,296.04001,2079.2922};
+			azimut=-209.56059;
+			id=36;
+			side="EMPTY";
+			vehicle="B_Truck_01_medical_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={8280.1543,296.04001,2073.3569};
+			azimut=-208.85239;
+			id=37;
+			side="EMPTY";
+			vehicle="B_Truck_01_Repair_F";
+			leader=1;
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			position[]={8221.5303,296.04001,2106.8625};
@@ -604,15 +656,15 @@ class Mission
 			type="Empty";
 			colorName="ColorBlue";
 			fillName="Border";
-			a=800;
-			b=600;
+			a=1000;
+			b=800;
 			angle=-29.0998;
 			drawBorder=1;
 		};
 		class Item5
 		{
 			position[]={6367.6763,289.64023,6472.0283};
-			name="lkr_ied_zone";
+			name="lkr_island_zone";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
@@ -620,6 +672,30 @@ class Mission
 			a=6000;
 			b=6000;
 			drawBorder=1;
+		};
+		class Item6
+		{
+			position[]={8219.3789,296.04001,2137.3628};
+			name="lkr_mhq_spawn";
+			type="Empty";
+			angle=76.779533;
+		};
+	};
+	class Sensors
+	{
+		items=1;
+		class Item0
+		{
+			position[]={8256.9248,296.04001,2129.3145};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="rating player < 0";
+			expActiv="player setUnitRank ""CORPORAL"";";
+			class Effects
+			{
+			};
 		};
 	};
 };

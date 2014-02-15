@@ -58,7 +58,7 @@ allowExplosiveToTriggerIEDs = true;
 //http://community.bistudio.com/wiki/side
 
 iedArray = [
-	["lkr_ied_zone", "West"]
+	["lkr_island_zone", "West"]
 	/*
 	["AllCities","West"],
 	["AllVillages","West"],

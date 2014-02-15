@@ -18,6 +18,7 @@ respawndelay = 5;
 respawndialog = 0;
 //disabledAI = true;
 enableDebugConsole = 1;
+allowFunctionsLog = 1;
 
 author="lukrop";
 onLoadName = "Annihilation USMC";
@@ -32,6 +33,7 @@ class Header
 	maxPlayers=20;
 };
 
+#include "=BTC=_revive\=BTC=_respawn.h"
 
 class CfgFunctions
 {
@@ -39,6 +41,7 @@ class CfgFunctions
 	#include "VVS\Functions.h"
 	#include "taw_vd\CfgFunctions.hpp"
 	#include "f\CfgFunctions.hpp"
+  #include "lkr\CfgFunctions.hpp"
 };
 
 #include "VAS\menu.hpp"
