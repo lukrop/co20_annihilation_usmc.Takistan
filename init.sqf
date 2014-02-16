@@ -24,8 +24,12 @@ tf_no_auto_long_range_radio = true;
 // compile shk_pos
 call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
 
-// wait until the parameters have been initialized
-waitUntil {!isNil "param_btc_mobile_respawn_vas"};
+// since, for whatever reason, the init.sqf is executed preInit in SP
+// and postInit in MP we'll have to wait for the params to be initialized in SP
+if(!isMultiplayer) then {
+	// wait until the parameters have been initialized
+	waitUntil {!isNil "param_btc_mobile_respawn_vas"};
+};
 
 // include configuration (class names and so on)
 #include "config.sqf"
