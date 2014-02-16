@@ -14,5 +14,8 @@
 	-
 */
 
+
+// we can only add arrays to arrays
+if(typename _this != "ARRAY") then {_this = [_this]};
 if(lkr_gc_debug) then {["Adding %1 to queue", _this] call BIS_fnc_logFormat};
-lkr_gc_queue = lkr_gc_queue + [_this];
+lkr_gc_queue = lkr_gc_queue + _this;

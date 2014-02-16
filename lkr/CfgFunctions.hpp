@@ -11,5 +11,7 @@ class lkr
 		class gcAdd {};
 		class gcEmptyQueue {};
 		class gcDeleteFirstInQueue {};
+		class spawnEnemyGroup {};
+		class enableGarbageCollection{};
 	};
 };

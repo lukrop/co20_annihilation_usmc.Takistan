@@ -16,7 +16,7 @@
 respawn = BASE;
 respawndelay = 5;
 respawndialog = 0;
-//disabledAI = true;
+disabledAI = true;
 enableDebugConsole = 1;
 allowFunctionsLog = 1;
 

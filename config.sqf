@@ -16,6 +16,10 @@
 // Mobile respawn vehicle class
 lkr_mhq_vehicle_C = "B_MRAP_01_F";
 
+// define enemy side and create center
+lkr_enemy_side = east;
+lkr_enemy_center = createCenter east;
+
 // define enemy units classes
 switch(param_enemy_faction) do {
 	// CAF Aggressors middle eastern

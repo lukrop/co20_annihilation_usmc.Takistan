@@ -23,7 +23,7 @@ class Mission
 	randomSeed=6231883;
 	class Intel
 	{
-		briefingName="CO20 Annihilation USMC v0.5";
+		briefingName="CO20 Annihilation USMC 0.5";
 		overviewText="Complete random missions.";
 		startWind=0.099999994;
 		startWaves=0.099999994;
