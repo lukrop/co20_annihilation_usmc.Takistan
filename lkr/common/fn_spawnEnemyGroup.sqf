@@ -68,8 +68,7 @@ if(typename _param1 == "ARRAY") then {
 };
 if(typename _param1 == "SCALAR") then {_size = _param1};
 
-// get the third paramter and set it to ["patrol", position, 150] if none is provided
-_task = [_this, 2, ["patrol", _pos, 150], [[]], [3]] call BIS_fnc_param;
+_task = [_this, 2, ["nothing"], [[]], [3]] call BIS_fnc_param;
 // check if we should do garbage collection
 _gc = [_this, 3, true, [true]] call BIS_fnc_param;
 
@@ -88,10 +87,13 @@ _enemyGroup = [_pos, lkr_enemy_side, _unitsList,[],[],lkr_enemy_skill_range,[],[
 // if we do garbage collection enable it for the whole group
 if(_gc) then {_enemyGroup call lkr_fnc_enableGarbageCollection};
 
-// forge the paramters for the groupExecuteTask call
-// the paramters should be [group, taskname, position, radius]
-_taskParam = [_enemyGroup] + _task;
-_taskParam call lkr_fnc_groupExecuteTask;
+// only assign a task if one is given
+if((_task select 0) != "nothing") then {
+	// forge the paramters for the groupExecuteTask call
+	// the paramters should be [group, taskname, position, radius]
+	_taskParam = [_enemyGroup] + _task;
+	_taskParam call lkr_fnc_groupExecuteTask;
+};
 
 // return the group
 _enemyGroup

@@ -26,7 +26,7 @@ private ["_group", "_task", "_pos", "_radius"];
 
 _param0 = [_this, 0, objNull, [objNull, grpNull]] call BIS_fnc_param;
 _task = [_this, 1, "patrol", [""]] call BIS_fnc_param;
-_param2 = [_this, 2, [0,0,0], [[],""],[3]] call BIS_fnc_param;
+_param2 = [_this, 2, [0,0,0], [[],"", objNull],[3]] call BIS_fnc_param;
 _radius = [_this, 3, 150, [0]] call BIS_fnc_param;
 
 if(typename _param0 == "OBJECT") then {
