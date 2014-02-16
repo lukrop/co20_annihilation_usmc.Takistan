@@ -8,7 +8,7 @@
         sets the global variable for lkr_mhq
 
     Parameter(s):
-        OBJECT:
+        0: OBJECT:
             the vehicle
 
     Returns:

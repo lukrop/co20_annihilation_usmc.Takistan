@@ -7,7 +7,7 @@
 		Adds object to garbage collector queue.
 
 	Parameter(s):
-		OBJECT:
+		0: OBJECT:
 			the object to remove
 
 	Returns:
