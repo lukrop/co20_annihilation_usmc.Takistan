@@ -12,6 +12,8 @@
 	Returns:
 	-
 */
+// wait until all parameters are set
+waitUntil {!isNil "params_set"};
 
 // Mobile respawn vehicle class
 lkr_mhq_vehicle_C = "B_MRAP_01_F";

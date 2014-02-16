@@ -10,6 +10,7 @@ class lkr
 	class common {
 		file = "lkr\common";
 		
+		class loadConfig {preInit=1};
 		class initMHQ {};
 		class spawnEnemyGroup {};
 		class enableGarbageCollection{};
@@ -25,6 +26,16 @@ class lkr
 		class gcAdd {};
 		class gcEmptyQueue {};
 		class gcDeleteFirstInQueue {};
+	};
+
+	class mm
+	{
+		file = "lkr\mm";
+
+		class mmInit {postInit=1}; // starts the mission manager
+		class mmLoop {};
+		class mmChooseMission {};
+		class mmRunMission {};
 	};
 	
 };

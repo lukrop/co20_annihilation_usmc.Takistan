@@ -168,6 +168,14 @@ class Params {
     code = "param_btc_mobile_respawn_vas = %1";
   };
 
+  class params_set {
+    title = "";
+    values[] = {0};
+    texts[] = {""};
+    default = 0;
+    code = "params_set = true";
+  };
+
   /*
   class ani_vec_respawndelay {
     title="Vehicle respawn delay";
