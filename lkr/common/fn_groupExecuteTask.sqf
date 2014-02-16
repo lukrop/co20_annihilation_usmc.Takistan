@@ -12,9 +12,9 @@
 		1: STRING
 			The task to execute. Can be one of:
 				"patrol", "defend", "scout", "attack"
-		2: STRING, OBJECT
+		2: STRING, POSITION, OBJECT
 			Marker name from within a random position is chosen or
-			a position.
+			a object or a position.
 		3: SCALAR
 			Radius in which the group is patrolling, scanning for hiding
 			positions, scouting or searching the area while attacking.
@@ -37,13 +37,18 @@ if(typename _param0 == "OBJECT") then {
 	_group = _param0;
 };
 
-if(typename _param1 == "STRING") then {
+if(typename _param2 == "STRING") then {
 	// we got a string so we expect it to be a marker name
 	// and choose a random position within that marker
-	_pos = _param1 call SHK_pos;
+	_pos = _param2 call SHK_pos;
 } else {
-	// we got a position
-	_pos = _param1;
+	if(typename _param2 == "OBJECT") then {
+		// we got a object parse its position
+		_pos = getPos _param2;
+	} else {
+		// we got a position
+		_pos = _param2;
+	};
 };
 
 // write warning to rpt if we are tasking to [0,0,0] usually something is fishy in this case
@@ -65,6 +70,7 @@ switch(_task) do {
 
 	case "scout": {
 		// STUB
+		"Warning! Scout task is a STUB. Tasking nothing." call BIS_fnc_log;
 	};
 
 	case "attack": {
