@@ -82,7 +82,7 @@ for "_i" from 1 to (_size - 1) do {
 };
 
 // spawn the group
-_enemyGroup = [_pos, lkr_enemy_side, _unitsList,[],[],lkr_enemy_skill_range,[],[],0] call BIS_fnc_spawnGroup;
+_enemyGroup = [_pos, lkr_enemy_side, _unitsList, lkr_enemy_skill_range] call lkr_fnc_spawnGroup;
 
 // if we do garbage collection enable it for the whole group
 if(_gc) then {_enemyGroup call lkr_fnc_enableGarbageCollection};

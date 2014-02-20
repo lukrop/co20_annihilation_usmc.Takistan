@@ -22,9 +22,9 @@ waitUntil{!isNil "lkr_config_loaded"};
 // current mission array
 lkr_current_mission = [];
 // time between missions in seconds
-lkr_time_between_missions = 10;
+lkr_time_between_missions = 60;
 // mission pool
-lkr_available_missions = ["cache", "killhvt"];
+lkr_available_missions = ["cache", "killhvt", "killhvtstatic"];
 
 // start the main loop
 call lkr_fnc_mmLoop;

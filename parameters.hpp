@@ -30,6 +30,7 @@ class Params {
     code = "param_daytime = %1";
   };
   
+  /*
    class param_weather {
     title = "  - Weather";
     values[] = {0,1,2,3,4};
@@ -37,6 +38,7 @@ class Params {
     default = 1;
     code = "param_weather = %1";
   };
+  */
 
   class param_ied {
     title = "  - Roadside IEDs";

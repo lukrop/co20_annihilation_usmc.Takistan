@@ -10,11 +10,25 @@ class lkr
 	class common {
 		file = "lkr\common";
 		
-		class loadConfig {preInit=1};
+		class loadConfig {
+			preInit=1;
+		};
 		class initMHQ {};
+		class spawnGroup {};
 		class spawnEnemyGroup {};
 		class enableGarbageCollection{};
-		class groupExecuteTask{};
+		class groupExecuteTask {};
+		class hideMarkers {
+			preInit=1;
+			postInit=1;
+		};
+	};
+
+	class missionHelper {
+		file = "lkr\mh";
+
+		class mhTriggerOnObjectDestroyed {};
+		class mhGetMissionLocation {};
 	};
 
 	class gc

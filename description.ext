@@ -1,22 +1,22 @@
 /*
-  File: description.ext
-  Author: lukrop
+	File: description.ext
+	Author: lukrop
 
-  License: see LICENSE.txt
-  Description:
-  Mission description file
+	License: see LICENSE.txt
+	Description:
+	Mission description file
 
-  Parameter(s):
-  -
+	Parameter(s):
+	-
 
-  Returns:
-  -
+	Returns:
+	-
 */
 
 respawn = BASE;
 respawndelay = 5;
 respawndialog = 0;
-disabledAI = true;
+//disabledAI = true;
 enableDebugConsole = 1;
 allowFunctionsLog = 1;
 
@@ -34,6 +34,7 @@ class Header
 };
 
 #include "=BTC=_revive\=BTC=_respawn.h"
+#include "ani_recruit\recruitDialog.hpp"
 
 class CfgFunctions
 {
@@ -41,7 +42,7 @@ class CfgFunctions
 	#include "VVS\Functions.h"
 	#include "taw_vd\CfgFunctions.hpp"
 	#include "f\CfgFunctions.hpp"
-  #include "lkr\CfgFunctions.hpp"
+	#include "lkr\CfgFunctions.hpp"
 };
 
 #include "VAS\menu.hpp"
