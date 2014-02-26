@@ -437,7 +437,6 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="lkr_flag";
-			init="this addAction [""<t color='#11ffff'>Recruit units</t>"", ""ani_recruit\openDialog.sqf""];";
 		};
 		class Item1
 		{
@@ -455,26 +454,26 @@ class Mission
 		class Item2
 		{
 			position[]={6007.1138,83.040001,11522.313};
-			azimut=164.89532;
+			azimut=164.895;
 			id=23;
 			side="EMPTY";
 			vehicle="B_Truck_01_mover_F";
 			lock="LOCKED";
 			skill=0.60000002;
 			text="lkr_vvs_ground";
-			init="this allowDamage false; this enableSimulation false;this addAction[""<t color='#11ff11'>Wheeled Victors</t>"", VVS_fnc_openVVS, [""lkr_vvs_ground_spawn"",""Car""]]; this addAction[""<t color='#11ff11'>Armored Victors</t>"",VVS_fnc_openVVS,[""lkr_vvs_ground_spawn"",""Armored""]];";
+			init="this allowDamage false; this enableSimulation false;";
 		};
 		class Item3
 		{
 			position[]={5968.0303,83.040001,11491.4};
-			azimut=2.5295792;
+			azimut=2.5295801;
 			id=24;
 			side="EMPTY";
 			vehicle="B_Truck_01_mover_F";
 			lock="LOCKED";
 			skill=0.60000002;
 			text="lkr_vvs_air";
-			init="this allowDamage false; this enableSimulation false; this addAction[""<t color='#11ff11'>Air Victors</t>"",VVS_fnc_openVVS,[""lkr_vvs_air_spawn"",""Air""]];";
+			init="this allowDamage false; this enableSimulation false;";
 		};
 		class Item4
 		{

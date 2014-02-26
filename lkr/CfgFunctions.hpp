@@ -16,7 +16,6 @@ class lkr
 		class initMHQ {};
 		class spawnGroup {};
 		class spawnEnemyGroup {};
-		class enableGarbageCollection{};
 		class groupExecuteTask {};
 		class hideMarkers {
 			preInit=1;
@@ -40,6 +39,7 @@ class lkr
 		class gcAdd {};
 		class gcEmptyQueue {};
 		class gcDeleteFirstInQueue {};
+		class enableGarbageCollection{};
 	};
 
 	class mm

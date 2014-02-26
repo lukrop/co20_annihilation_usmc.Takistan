@@ -19,7 +19,7 @@ enableSaving [false, false];
 // if using Task Force Radio, don't add a long range radio automatically
 tf_no_auto_long_range_radio = true;
 // if using Task Force Radio, set all short range radios to the same frequency for each side
-//tf_same_sw_frequencies_for_side = true;
+tf_same_sw_frequencies_for_side = true;
 
 // compile shk_pos
 call compile preprocessFileLineNumbers "SHK_pos\shk_pos_init.sqf";
