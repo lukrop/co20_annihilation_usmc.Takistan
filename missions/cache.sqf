@@ -15,27 +15,25 @@
 	-
 */
 
-_posArray = [0] call lkr_fnc_mhGetMissionLocation;
+private ["_markerArray", "_spawnMarkers", "_marker", "_centerPos", "_taskID"];
 
-private ["_posArray", "_vecSpawnMarker", "_reinfMarkers", "_spawnMarkers", "_marker", "_aocenter", "_taskID", "_reinfCount", "_reinfSpawn"];
-
-_vecSpawnMarker = _posArray select 1;
-_reinfMarkers = _posArray select 2;
-_spawnMarkers = _posArray select 3;
+_markerArray = ["city"] call lkr_fnc_mhGetMissionLocation;
 
 // MARKER
-_marker = _posArray select 0;
-_aocenter = getMarkerPos _marker;
+_marker = _markerArray select 0;
+_centerPos = getMarkerPos _marker;
+
+_spawnMarkers = _markerArray select 1;
 
 // CREATE TASK
 _taskID = "cacheSearch";
 [
-west, // who gets the task
-_taskID, // task id
-[localize "STR_ANI_CACHE_DESCRIPTION", localize "STR_ANI_CACHE", localize "STR_ANI_SAD"], // description, title, marker
-_aocenter, // destination
-"Assigned", // set as current / state
-9 // priority
+	west, // who gets the task
+	_taskID, // task id
+	[localize "STR_ANI_CACHE_DESCRIPTION", localize "STR_ANI_CACHE", localize "STR_ANI_SAD"], // description, title, marker
+	_centerPos, // destination
+	"Assigned", // set as current / state
+	9 // priority
 ] call BIS_fnc_taskCreate;
 
 // spawn the weapon cache
@@ -51,15 +49,17 @@ lkr_wepCacheDestroyed = false;
 ["lkr_wepcache", "lkr_wepCacheDestroyed"] call lkr_fnc_mhTriggerOnObjectDestroyed;
 
 // spawn 8 to 12 units, tasked with defending the _cachePos up to a radius of 100 meters
-[_aocenter, [8,12], ["defend", _cachePos, 100]] call lkr_fnc_spawnEnemyGroup;
+[_centerPos, [8,12], ["defend", _cachePos, 100]] call lkr_fnc_spawnEnemyGroup;
 sleep 10;
-// spawn 4 units, tasked with patrolling the _aocenter up to a radius of 100 meters
-[_aocenter, 4, ["patrol", _aocenter, 100]] call lkr_fnc_spawnEnemyGroup;
+// spawn 4 units, tasked with patrolling the _centerPos up to a radius of 100 meters
+[_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
 sleep 10;
-// spawn 4 units, tasked with patrolling the _aocenter up to a radius of 100 meters
-[_aocenter, 4, ["patrol", _aocenter, 100]] call lkr_fnc_spawnEnemyGroup;
+// spawn 4 units, tasked with patrolling the _centerPos up to a radius of 100 meters
+[_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
 
 // wait until the cache is destroyed
 waitUntil{sleep 1; lkr_wepCacheDestroyed};
 // set the task as succeeded
 [_taskID, "Succeeded"] call BIS_fnc_taskSetState;
+// add to garbage collector queue
+lkr_wepcache call lkr_fnc_gcAdd;

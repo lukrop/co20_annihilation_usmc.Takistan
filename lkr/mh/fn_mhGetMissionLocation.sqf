@@ -4,25 +4,32 @@
 
 	License: see LICENSE.txt
 	Description:
-		Sets a variable to true as soon as the
-		given object is destroyed/dead.
+		Returns a array of marker names for the given
+		location type.
 
 	Parameter(s):
-		0: SCALAR
-			mission type: city = 0, land = 1
-		1: STRING
-			variable name to set to true
-			as soon as the object is destroyed
+		0: STRING
+			location type: "city", "land" or "all"
 	Returns:
-	-
+		ARRAY
+			containing markers for the selected location
 */
-private ["_posArray"];
+private ["_posArray", "_locationType"];
 
-_missionStyle = _this select 0;
+_locationType = [_this, 0, "all", [""]] call BIS_fnc_param;
 
-switch (_missionStyle) do {
+// choose randomly between city or land
+if(_locationType == "all") then {
+	if(random 1 <= 0.5) then {
+		_locationType = "city";
+	} else {
+		_locationType = "land";
+	};
+};
+
+switch (_locationType) do {
 	// city mission
-	case 0: {
+	case "city": {
 		// select a random entry (positions)
 		_index = round (random ((count lkr_city_markers) - 1));
 		_posArray = lkr_city_markers select _index;
@@ -31,7 +38,7 @@ switch (_missionStyle) do {
 		lkr_city_markers = lkr_city_markers - [-1];
 	};
 	// land mission
-	case 1: {
+	case "land": {
 		_index = round (random ((count lkr_land_markers) - 1));
 		_posArray = lkr_land_markers select _index;
 		lkr_land_markers set [_index, -1];
