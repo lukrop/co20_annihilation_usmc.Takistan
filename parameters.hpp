@@ -154,6 +154,29 @@ class Params {
 		code = "param_tpwlos = %1";
 	};
 
+	class param_vec_respawn {
+		title="  - Vehicle respawn";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 1;
+		code = "param_vec_respawn = %1";
+	};
+	
+	class param_vec_respawn_delay_destroyed {
+		title = "   -- Destroyed vehicles respawn delay:";
+		values[] = {1, 2, 5};
+		texts[] = {"1 minute", "2 minutes", "5 minutes"};
+		default = 2;
+		code = "param_vec_respawn_delay_destroyed = %1";
+	};
+
+	class param_vec_respawn_delay_abandoned {
+		title = "   -- Abandoned vehicles respawn delay:";
+		values[] = {10, 20, 50};
+		texts[] = {"10 minute", "20 minutes", "50 minutes"};
+		default = 20;
+		code = "param_vec_respawn_delay_abandoned = %1";
+	};
 
 	class param_revive {
 		title="  - Revive";

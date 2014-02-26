@@ -426,7 +426,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=36;
+		items=38;
 		class Item0
 		{
 			position[]={6074.1768,83.001961,11504.3};
@@ -478,52 +478,57 @@ class Mission
 		class Item4
 		{
 			position[]={5954.2793,83.040001,11447.363};
-			azimut=134.59102;
+			azimut=134.591;
 			id=25;
 			side="EMPTY";
 			vehicle="B_APC_Tracked_01_CRV_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_4";
 		};
 		class Item5
 		{
 			position[]={5984.749,83.040001,11479.594};
-			azimut=133.07092;
+			azimut=133.071;
 			id=26;
 			side="EMPTY";
 			vehicle="B_Truck_01_ammo_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_8";
 		};
 		class Item6
 		{
 			position[]={5976.3618,83.040001,11471.584};
-			azimut=-227.42662;
+			azimut=-227.427;
 			id=27;
 			side="EMPTY";
 			vehicle="B_Truck_01_fuel_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_7";
 		};
 		class Item7
 		{
 			position[]={5968.8965,83.040001,11463.508};
-			azimut=-226.14629;
+			azimut=-226.146;
 			id=28;
 			side="EMPTY";
 			vehicle="B_Truck_01_medical_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_6";
 		};
 		class Item8
 		{
 			position[]={5961.3613,83.040001,11455.254};
-			azimut=-225.43808;
+			azimut=-225.438;
 			id=29;
 			side="EMPTY";
 			vehicle="B_Truck_01_Repair_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_5";
 		};
 		class Item9
 		{
@@ -770,13 +775,14 @@ class Mission
 		class Item31
 		{
 			position[]={6033.5562,83.040001,11561.36};
-			azimut=128.70689;
+			azimut=128.707;
 			special="NONE";
 			id=52;
 			side="EMPTY";
 			vehicle="B_mas_mar_Heli_Transport_01_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_1";
 		};
 		class Item32
 		{
@@ -788,6 +794,7 @@ class Mission
 			vehicle="B_mas_mar_Heli_Light_01_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_2";
 		};
 		class Item33
 		{
@@ -799,28 +806,55 @@ class Mission
 			vehicle="B_mas_mar_Heli_Light_01_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_3";
 		};
 		class Item34
 		{
 			position[]={6031.8481,83.03215,11483.791};
-			azimut=43.944298;
+			azimut=43.944302;
 			special="NONE";
 			id=55;
 			side="EMPTY";
 			vehicle="B_mas_mar_MRAP_01_hmg_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_9";
 		};
 		class Item35
 		{
 			position[]={6039.126,82.982079,11476.591};
-			azimut=41.702454;
+			azimut=41.702499;
 			special="NONE";
 			id=56;
 			side="EMPTY";
 			vehicle="B_mas_mar_MRAP_01_hmg_F";
 			leader=1;
 			skill=0.60000002;
+			text="lkr_veh_10";
+		};
+		class Item36
+		{
+			position[]={6046.8179,82.854202,11469.185};
+			azimut=43.944302;
+			special="NONE";
+			id=57;
+			side="EMPTY";
+			vehicle="B_mas_mar_MRAP_01_gmg_F";
+			leader=1;
+			skill=0.60000002;
+			text="lkr_veh_11";
+		};
+		class Item37
+		{
+			position[]={6054.0957,82.653946,11461.984};
+			azimut=41.702499;
+			special="NONE";
+			id=58;
+			side="EMPTY";
+			vehicle="B_mas_mar_MRAP_01_gmg_F";
+			leader=1;
+			skill=0.60000002;
+			text="lkr_veh_12";
 		};
 	};
 	class Markers

@@ -19,7 +19,7 @@ setDate [2014,4,2,param_daytime,0];
 // wait until the config is loaded and the paramters are initialized
 waitUntil {!isNil "lkr_config_loaded"};
 
-if(param_caching) then {
+if(param_caching == 1) then {
 	// caching/decaching after 1500m
 	f_param_caching = 1500;
 	f_var_debugMode = 0;
@@ -50,4 +50,14 @@ if(param_tpwcas == 1) then {
 	};
 	// start tpwcas and tpwlos
 	[tpwcas_mode] execVM "tpwcas\tpwcas_script_init.sqf";
+};
+
+// enable vehicle respawn for all prespawned vehicles
+if(param_vec_respawn == 1) then {
+	{
+		["Vec respawn: %1, A: %2, D: %3", _x, param_vec_respawn_delay_abandoned, param_vec_respawn_delay_destroyed] call BIS_fnc_logFormat;
+		[_x, param_vec_respawn_delay_abandoned, param_vec_respawn_delay_destroyed, {}] call lkr_fnc_ICE_vehRespawn;
+	} forEach [lkr_veh_1, lkr_veh_2, lkr_veh_3, lkr_veh_4,
+		lkr_veh_5, lkr_veh_6, lkr_veh_7, lkr_veh_8, lkr_veh_9,
+		lkr_veh_10, lkr_veh_11, lkr_veh_12];
 };

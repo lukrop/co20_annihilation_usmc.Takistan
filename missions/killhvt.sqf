@@ -70,7 +70,7 @@ sleep 10;
 [_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
 
 
-waitUntil{sleep 2; lkr_hvtKilled};
+waitUntil{sleep 2; lkr_hvt_killed};
 [_taskID, "Succeeded"] call BIS_fnc_taskSetState;
 // add to garbage collector queue
 lkr_hvt call lkr_fnc_gcAdd;
