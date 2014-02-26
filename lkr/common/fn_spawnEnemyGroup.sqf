@@ -85,7 +85,11 @@ for "_i" from 1 to (_size - 1) do {
 _enemyGroup = [_pos, lkr_enemy_side, _unitsList, lkr_enemy_skill_range] call lkr_fnc_spawnGroup;
 
 // if we do garbage collection enable it for the whole group
-if(_gc) then {_enemyGroup call lkr_fnc_enableGarbageCollection};
+if(_gc) then {
+	{
+		_x call lkr_fnc_enableGarbageCollection
+	} count units _enemyGroup;
+};
 
 // only assign a task if one is given
 if((_task select 0) != "nothing") then {
