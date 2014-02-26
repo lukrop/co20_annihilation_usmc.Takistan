@@ -29,7 +29,7 @@
 			deleteVehicle _x;
 		};
 	};
-} forEach lkr_gc_queue;
+} count lkr_gc_queue;
 
 // empty the queue
 lkr_gc_queue = nil;

@@ -34,5 +34,5 @@ if(typename _param0 == "OBJECT") then {
 	// add every unit of group to queue
 	{
 		_x call _addToQueue;
-	} forEach units _param0;
+	} count units _param0;
 };
