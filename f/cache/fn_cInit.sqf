@@ -10,6 +10,8 @@ if (isNil "f_param_caching" || {f_param_caching == 0}) exitWith {};
 // Wait for the mission to have launched before starting to cache.
 sleep 0.1;
 
+// get the time to wait before caching a group, default 0
+f_cache_wait = [_this, 1, 0, [0]] call BIS_fnc_param;
 
 // Wait up to the desired time into the mission to give AI and players time to settle
 waitUntil {time > (_this select 0)};

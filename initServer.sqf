@@ -19,11 +19,13 @@ setDate [2014,4,2,param_daytime,0];
 // wait until the config is loaded and the paramters are initialized
 waitUntil {!isNil "lkr_config_loaded"};
 
-// caching/decaching after 1500m
-f_param_caching = 1500;
-f_var_debugMode = 0;
-// start unit caching after 15 seconds
-[15] execVM "f\cache\fn_cInit.sqf";
+if(param_caching) then {
+	// caching/decaching after 1500m
+	f_param_caching = 1500;
+	f_var_debugMode = 0;
+	// start unit caching after 15 seconds
+	[10, 15] execVM "f\cache\fn_cInit.sqf";
+};
 
 if(param_tpwcas == 1) then {
 	// bullet threshold more shots than this will cause unit to drop/crawl.

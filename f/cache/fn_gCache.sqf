@@ -2,6 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
+sleep f_cache_wait;
 // LOOP THROUGH THE PASSED UNITS
 // We loop through the units of the passed group and disable Simulation for all of them but the leaders (to make sure that e.g. patrols still work)
 {

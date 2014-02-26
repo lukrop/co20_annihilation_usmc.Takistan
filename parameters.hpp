@@ -114,6 +114,14 @@ class Params {
     default = 0;
   };
 
+  class param_caching {
+    title = "  - Cache enemy AI groups to save resources";
+    values[] = {0,1};
+    texts[] = {"Disabled","Enabled"};
+    default = 0;
+    code = "param_caching = %1";
+  };
+
   class param_tpwcas {
     title = "  - Enemy AI groups affected by suppression";
     values[] = {0,1};
