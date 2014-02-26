@@ -88,7 +88,7 @@ _enemyGroup = [_pos, lkr_enemy_side, _unitsList, lkr_enemy_skill_range] call lkr
 if(_gc) then {
 	{
 		_x call lkr_fnc_enableGarbageCollection
-	} count units _enemyGroup;
+	} forEach units _enemyGroup;
 };
 
 // only assign a task if one is given
