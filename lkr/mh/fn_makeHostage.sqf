@@ -22,4 +22,4 @@ _unit setUnitPos "DOWN";
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";
 
-[[_unit],"lkr_fnc_mhAddRescueAction",nil,true] spawn BIS_fnc_MP;
+[[_unit],"lkr_fnc_addRescueAction",nil,true] spawn BIS_fnc_MP;

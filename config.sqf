@@ -19,6 +19,10 @@ waitUntil {!isNil "params_set"};
 lkr_mhq_vehicle_C = "B_MRAP_01_F";
 // uav class
 lkr_uav_C = "B_UAV_02_F";
+// chopper class
+lkr_chopper_C = "B_Heli_Transport_01_F";
+// pilot class
+lkr_pilot_C = "B_helipilot_F";
 
 // define enemy side and create center
 lkr_enemy_side = east;
@@ -123,7 +127,7 @@ lkr_land_markers = [
 	["land15", ["land15_scout", "land15_scout_1", "land15_scout_2", "land15_scout_3"]]
 ];
 
-ani_maxRecruitUnits = 12;
+//ani_maxRecruitUnits = 12;
 ani_recruit_ARClass = "B_mas_mar_soldier_AR_F_d";
 ani_recruit_MGClass = "B_mas_mar_soldier_MG_F_d";
 ani_recruit_ATClass = "B_mas_mar_soldier_AT_F_d";

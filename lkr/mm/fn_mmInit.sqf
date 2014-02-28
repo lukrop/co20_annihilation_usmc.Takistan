@@ -24,7 +24,8 @@ waitUntil{!isNil "lkr_config_loaded"};
 // time between missions in seconds
 lkr_time_between_missions = 120;
 // mission pool
-lkr_available_missions = ["cache", "killhvt", "killhvtstatic", "uav"];
+lkr_available_missions = ["cache", "killhvt", "killhvtstatic", "uav", "rescuepilot"];
+//lkr_available_missions = ["rescuepilot"];
 
 // start the main loop
 call lkr_fnc_mmLoop;

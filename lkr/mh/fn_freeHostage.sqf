@@ -28,4 +28,4 @@ _hostage setUnitPos "Auto";
 [_hostage] joinSilent (group _unit);
 doStop _hostage;
 
-[_hostage, "lkr_fnc_mhRemoveAllActions", nil, true] spawn BIS_fnc_mp;
+[_hostage, "lkr_fnc_removeAllActions", nil, true] spawn BIS_fnc_mp;
