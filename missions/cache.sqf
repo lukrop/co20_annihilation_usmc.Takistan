@@ -17,7 +17,7 @@
 
 private ["_markerArray", "_spawnMarkers", "_marker", "_centerPos", "_taskID"];
 
-_markerArray = ["city"] call lkr_fnc_mhGetMissionLocation;
+_markerArray = ["city"] call lkr_fnc_getMissionLocation;
 
 // MARKER
 _marker = _markerArray select 0;
@@ -46,7 +46,7 @@ clearItemCargo lkr_wepcache;
 
 // LOGIC
 lkr_wepCacheDestroyed = false;
-["lkr_wepcache", "lkr_wepCacheDestroyed"] call lkr_fnc_mhTriggerOnObjectDestroyed;
+["lkr_wepcache", "lkr_wepCacheDestroyed"] call lkr_fnc_triggerOnObjectDestroyed;
 
 // spawn 8 to 12 units, tasked with defending the _cachePos up to a radius of 100 meters
 [_centerPos, [8,12], ["defend", _cachePos, 100]] call lkr_fnc_spawnEnemyGroup;

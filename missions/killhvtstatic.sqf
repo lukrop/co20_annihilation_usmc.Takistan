@@ -17,7 +17,7 @@
 
 private ["_markerArray", "_spawnMarkers", "_marker", "_centerPos", "_taskID"];
 
-_markerArray = ["city"] call lkr_fnc_mhGetMissionLocation;
+_markerArray = ["city"] call lkr_fnc_getMissionLocation;
 
 // MARKER
 _marker = _markerArray select 0;
@@ -61,7 +61,7 @@ _hvtGrp setVariable ["f_cacheExcl", true, true];
 [_hvtGrp, _hvtGrp, 80] call CBA_fnc_taskDefend;
 
 lkr_hvt_killed = false;
-["lkr_hvt", "lkr_hvt_killed"] call lkr_fnc_mhTriggerOnObjectDestroyed;
+["lkr_hvt", "lkr_hvt_killed"] call lkr_fnc_triggerOnObjectDestroyed;
 
 sleep 5;
 // spawn enemies

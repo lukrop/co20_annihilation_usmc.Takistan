@@ -26,8 +26,13 @@ class lkr
 	class missionHelper {
 		file = "lkr\mh";
 
-		class mhTriggerOnObjectDestroyed {};
-		class mhGetMissionLocation {};
+		class triggerOnObjectDestroyed {};
+		class getMissionLocation {};
+		class addRescueAction {};
+		class freeHostage {};
+		class makeHostage {};
+		class removeAllActions {};
+		class moveInRandomHouse {};
 	};
 
 	class gc
