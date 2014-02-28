@@ -67,9 +67,9 @@ class Params {
 
 	class param_enemy_faction {
 		title="  - Faction";
-		values[] = {0,1,2};
-		texts[] = {"Middle eastern", "Eastern european", "African"};
-		default = 0;
+		values[] = {0,1,2,3,4};
+		texts[] = {"CSAT", "AAF", "Middle eastern", "Eastern european", "African"};
+		default = 2;
 		code = "param_enemy_faction = %1";
 	};
 
@@ -90,7 +90,7 @@ class Params {
 		default = 1;
 		code = "param_enemy_skill = %1";
 	};
-	
+	/*
 	class param_enemy_reinforcement {
 		title = "  - Reinforcements";
 		values[] = {0,1};
@@ -98,7 +98,7 @@ class Params {
 		default = 1;
 		code = "param_enemy_reinforcement = %1";
 	};
-
+	*/
 	class param_enemy_ambient_patrols {
 		title = "  - Random patrols (across the whole island)";
 		values[] = {0,1};

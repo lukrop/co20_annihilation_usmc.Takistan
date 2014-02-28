@@ -30,8 +30,31 @@ lkr_enemy_center = createCenter east;
 
 // define enemy units classes
 switch(param_enemy_faction) do {
-	// CAF Aggressors middle eastern
+	// CSAT
 	case 0: {
+		lkr_enemy_inf_leaders_C = ["O_Soldier_TL_F","O_officer_F","O_Soldier_SL_F","O_recon_TL_F"];
+		lkr_enemy_inf_units_C = ["O_Soldier_lite_F","O_Soldier_GL_F","O_Soldier_AR_F",
+		"O_soldier_M_F","O_Soldier_LAT_F","O_medic_F","O_soldier_repair_F", "O_soldier_exp_F","O_spotter_F","O_sniper_F",
+		"O_Soldier_A_F","O_Soldier_AT_F","O_Soldier_AA_F","O_engineer_F","O_recon_F","O_recon_M_F","O_recon_LAT_F",
+		"O_recon_medic_F","O_recon_exp_F","O_recon_JTAC_F", "O_Soldier_AAR_F","O_Soldier_AAT_F","O_Soldier_AAA_F"];
+		lkr_enemy_inf_vecs_C = ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Wheeled_02_rcws_F"];
+
+		lkr_hvt_C = "O_officer_F";
+		lkr_hvt_guard_C = "O_Soldier_lite_F";
+	};
+	// AAF
+	case 1: {
+		lkr_enemy_inf_leaders_C = ["I_Soldier_AR_F","I_Soldier_SL_F","I_Soldier_TL_F"];
+		lkr_enemy_inf_units_C = ["I_soldier_F","I_Soldier_lite_F","I_Soldier_A_F",
+        "I_Soldier_GL_F","I_Soldier_M_F","I_Soldier_LAT_F", "I_Soldier_AT_F","I_Soldier_AA_F","I_medic_F",
+        "I_Soldier_repair_F","I_Soldier_exp_F","I_engineer_F","I_helicrew_F","I_officer_F","I_Spotter_F",
+        "I_Sniper_F","I_Soldier_AAR_F","I_Soldier_AAT_F","I_Soldier_AAA_F"];
+
+		lkr_hvt_C = "I_officer_F";
+		lkr_hvt_guard_C = "I_Soldier_F";
+	};
+	// CAF Aggressors middle eastern
+	case 2: {
 		// enemy infantry group leaders
 		lkr_enemy_inf_leaders_C = ["CAF_AG_ME_AK74", "CAF_AG_ME_GL"];
 		// repeat akm dudes to increase their saturation
@@ -46,7 +69,7 @@ switch(param_enemy_faction) do {
 
 	};
 	// CAF Aggressors eastern europe
-	case 1: {
+	case 3: {
 		// enemy infantry group leaders
 		lkr_enemy_inf_leaders_C = ["CAF_AG_EUR_AK74", "CAF_AG_EUR_GL"];
 		// repeat akm dudes to increase their saturation
@@ -60,7 +83,7 @@ switch(param_enemy_faction) do {
 		lkr_hvt_guard_C = "CAF_AG_EUR_AK74";
 	};
 	// CAF Aggressors african
-	case 2: {
+	case 4: {
 		// enemy infantry group leaders
 		lkr_enemy_inf_leaders_C = ["CAF_AG_AFR_AK74", "CAF_AG_AFR_GL"];
 		// repeat akm dudes to increase their saturation
