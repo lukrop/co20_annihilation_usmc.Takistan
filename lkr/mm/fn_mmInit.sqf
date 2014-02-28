@@ -20,7 +20,7 @@ if(!isServer) exitWith {};
 waitUntil{!isNil "lkr_config_loaded"};
 
 // current mission array
-lkr_current_mission = [];
+//lkr_current_mission = [];
 // time between missions in seconds
 lkr_time_between_missions = 120;
 // mission pool
