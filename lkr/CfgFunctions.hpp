@@ -21,6 +21,8 @@ class lkr
 			preInit=1;
 			postInit=1;
 		};
+		class changeMarker {};
+		class getNumberBetween {};
 	};
 
 	class missionHelper {
@@ -33,6 +35,7 @@ class lkr
 		class makeHostage {};
 		class removeAllActions {};
 		class moveInRandomHouse {};
+		class spawnOccupation {};
 	};
 
 	class gc

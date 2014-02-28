@@ -21,7 +21,7 @@ waitUntil {!isNil "lkr_config_loaded"};
 
 if(param_caching == 1) then {
 	// caching/decaching after 1500m
-	f_param_caching = 1500;
+	f_param_caching = 1800;
 	f_var_debugMode = 0;
 	// start unit caching after 15 seconds
 	[10, 15] execVM "f\cache\fn_cInit.sqf";

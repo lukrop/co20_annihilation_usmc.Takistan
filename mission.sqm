@@ -925,8 +925,10 @@ class Mission
 			name="city1";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=100;
 			b=100;
+			drawBorder=1;
 		};
 		class Item8
 		{
@@ -964,8 +966,10 @@ class Mission
 			name="city2";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item14
 		{
@@ -1003,8 +1007,10 @@ class Mission
 			name="city3";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item20
 		{
@@ -1042,8 +1048,10 @@ class Mission
 			name="city4";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item26
 		{
@@ -1081,8 +1089,10 @@ class Mission
 			name="city0";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item32
 		{
@@ -1350,8 +1360,10 @@ class Mission
 			name="city5";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item68
 		{
@@ -1413,8 +1425,10 @@ class Mission
 			name="city6";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item78
 		{
@@ -1515,8 +1529,10 @@ class Mission
 			name="city7";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=200;
 			b=200;
+			drawBorder=1;
 		};
 		class Item92
 		{
@@ -2054,8 +2070,10 @@ class Mission
 			name="city8";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=300;
 			b=300;
+			drawBorder=1;
 		};
 		class Item177
 		{
@@ -2136,8 +2154,10 @@ class Mission
 			name="city9";
 			markerType="ELLIPSE";
 			type="Empty";
+			fillName="Border";
 			a=300;
 			b=300;
+			drawBorder=1;
 		};
 		class Item190
 		{

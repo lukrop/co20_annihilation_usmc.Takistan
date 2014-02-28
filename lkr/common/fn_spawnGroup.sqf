@@ -43,7 +43,7 @@ for "_i" from 0 to _unit_count do {
 	// create unit
 	_unit = _group createUnit [_cur_unit, _pos, [], 0, "FORM"];
 	// set unit skill between min and max
-	_skill = (_skill_range select 0) max (random (_skill_range select 1));
+	_skill = _skill_range call lkr_fnc_getNumberBetween;
 	_unit setSkill _skill;
 	//["Unit: %1 has skill: %2", _unit, _skill] call BIS_fnc_logFormat;
 	// sleep for half a second to let the engine catch up

@@ -62,9 +62,7 @@ _param1 = [_this, 1, 4, [0,[]], [2]] call BIS_fnc_param;
 // if its an array the first number is the min amount of units
 // and the second the maximum units
 if(typename _param1 == "ARRAY") then {
-	_min = _param1 select 0;
-	_max = _param1 select 1;
-	_size = _min max (round (random _max));
+	_size = _param1 call lkr_fnc_getNumberBetween;
 };
 if(typename _param1 == "SCALAR") then {_size = _param1};
 

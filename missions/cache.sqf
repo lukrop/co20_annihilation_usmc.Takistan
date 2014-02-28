@@ -48,14 +48,7 @@ clearItemCargo lkr_wepcache;
 lkr_wepCacheDestroyed = false;
 ["lkr_wepcache", "lkr_wepCacheDestroyed"] call lkr_fnc_triggerOnObjectDestroyed;
 
-// spawn 8 to 12 units, tasked with defending the _cachePos up to a radius of 100 meters
-[_centerPos, [8,12], ["defend", _cachePos, 100]] call lkr_fnc_spawnEnemyGroup;
-sleep 10;
-// spawn 4 units, tasked with patrolling the _centerPos up to a radius of 100 meters
-[_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
-sleep 10;
-// spawn 4 units, tasked with patrolling the _centerPos up to a radius of 100 meters
-[_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
+[_cachePos, _cachePos, [1,1], [2,4]] call lkr_fnc_spawnOccupation;
 
 // wait until the cache is destroyed
 waitUntil{sleep 1; lkr_wepCacheDestroyed};

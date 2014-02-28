@@ -37,14 +37,17 @@ _centerPos, // destination
 ] call BIS_fnc_taskCreate;
 
 // CREATE UAV
-_uavPos = [_centerPos, random 360, 30 max (random 300)] call SHK_pos;
-lkr_uav = lkr_uav_C createVehicle _uavPos;
+lkr_uav = lkr_uav_C createVehicle _centerPos;
+// find a random position with enough place for the uav
+_uavPos = [_centerPos, random 360, 30 max (random 300), 0, [0, 200], lkr_uav] call SHK_pos;
+lkr_uav setPos _uavPos;
 lkr_uav setDir (random 360);
 
 // LOGIC
 lkr_uav_destroyed = false;
-["lkr_uav", "lkr_uav_destroyed"] call lkr_fnc_mhTriggerOnObjectDestroyed;
+["lkr_uav", "lkr_uav_destroyed"] call lkr_fnc_triggerOnObjectDestroyed;
 
+[_uavPos, _uavPos, [1,1], [2,4]] call lkr_fnc_spawnOccupation;
 
 waitUntil{sleep 2; lkr_uav_destroyed};
 // set mission success

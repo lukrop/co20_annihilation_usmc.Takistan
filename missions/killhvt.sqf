@@ -63,12 +63,7 @@ _hvtGrp setVariable ["f_cacheExcl", true, true];
 lkr_hvt_killed = false;
 ["lkr_hvt", "lkr_hvt_killed"] call lkr_fnc_triggerOnObjectDestroyed;
 
-sleep 5;
-// spawn enemies
-[_centerPos, [8,12], ["defend", _hvtPos, 100]] call lkr_fnc_spawnEnemyGroup;
-sleep 10;
-[_centerPos, 4, ["patrol", _centerPos, 100]] call lkr_fnc_spawnEnemyGroup;
-
+[_hvtPos, _hvtPos, [1,1], [1,3]] call lkr_fnc_spawnOccupation;
 
 waitUntil{sleep 2; lkr_hvt_killed};
 [_taskID, "Succeeded"] call BIS_fnc_taskSetState;
