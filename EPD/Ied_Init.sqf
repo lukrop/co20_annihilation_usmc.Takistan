@@ -1,41 +1,35 @@
 /* Written by Brian Sweeney - [EPD] Brian*/
 
-call compile preprocessFileLineNumbers "EPD\Ied_Settings.sqf";
-
 if(isserver) then {
-	eventHandlers = [];
-	publicVariable "eventHandlers";
-	
 	iedsAdded = false;
 	publicVariable "iedsAdded";
+	
+	iedDictionary = call Dictionary_fnc_new;
+	publicVariable "iedDictionary";
+	
+	lastIedExplosion = [0,0,0];
+	publicVariable "lastIedExplosion";
 };
 
+ehExplosiveSuperClasses = ["RocketCore", "MissileCore", "SubmunitionCore", "GrenadeCore", "ShellCore"];
+publicVariable "ehExplosiveSuperClasses";
 
-IED = compile preprocessFileLineNumbers "EPD\IED\Ied.sqf";
-IED_SMOKE = compile preprocessFileLineNumbers "EPD\IED\IedSmoke.sqf";
-IED_ROCKS = compile preprocessFileLineNumbers "EPD\IED\IedRocks.sqf";
-IED_SCREEN_EFFECTS = compile preprocessFileLineNumbers "EPD\IED\IedPlayerEffects.sqf";
-CHECK_ARRAY = compile preprocessFileLineNumbers "EPD\IED\CheckArray.sqf";
-CREATE_IED = compile preprocessFileLineNumbers "EPD\IED\CreateIed.sqf";
-CREATE_FAKE = compile preprocessFileLineNumbers "EPD\IED\CreateFake.sqf";
-CREATE_PLACES_OF_INTEREST = compile preprocessFileLineNumbers "EPD\IED\createPlacesOfInterest.sqf";
-EXPLOSION_CHECK = compile preprocessFileLineNumbers "EPD\IED\ExplosionCheck.sqf";
-EXPLOSIVESEQUENCE_SMALL = compile preprocessFileLineNumbers "EPD\IED\ExplosiveSequenceSmall.sqf";
-EXPLOSIVESEQUENCE_MEDIUM = compile preprocessFileLineNumbers "EPD\IED\ExplosiveSequenceMedium.sqf";
-EXPLOSIVESEQUENCE_LARGE = compile preprocessFileLineNumbers "EPD\IED\ExplosiveSequenceLarge.sqf";
-EXPLOSIVESEQUENCE_SECONDARY = compile preprocessFileLineNumbers "EPD\IED\ExplosiveSequenceSecondary.sqf";
-INITIAL_EXPLOSION = compile preprocessFileLineNumbers "EPD\IED\InitialExplosion.sqf";
-SPAWN_SECONDARY = compile preprocessFileLineNumbers "EPD\IED\CreateSecondary.sqf";
-CREATE_SPECIFIC_IED = compile preprocessFileLineNumbers "EPD\IED\CreateSpecificIed.sqf";
-CREATE_RANDOM_IEDS = compile preprocessFileLineNumbers "EPD\IED\CreateRandomIeds.sqf";
-GET_SIZE_AND_TYPE = compile preprocessFileLineNumbers "EPD\IED\GetSizeAndType.sqf";
-FIND_LOCATION_BY_ROAD = compile preprocessFileLineNumbers "EPD\IED\FindLocationByRoad.sqf";
-PROJECTILE_DETECTION = compile preprocessFileLineNumbers "EPD\IED\ProjectileDetection.sqf";
-EXPLOSION_WATCHER = compile preprocessFileLineNumbers "EPD\IED\ExplosionWatcher.sqf";
-EXPLOSION_EVENT_HANDLER = compile preprocessFileLineNumbers "EPD\IED\ExplosionEventHandler.sqf";
-EXPLOSION_EVENT_HANDLER_ADDER  = compile preprocessFileLineNumbers "EPD\IED\EventHandlerAdder.sqf";
-SECONDARY_EVENT_ADDER = compile preprocessFileLineNumbers "EPD\IED\SecondaryEventAdder.sqf";
-Disarm = compile preprocessFileLineNumbers "EPD\IED\disarmAddAction.sqf";
+explosiveSuperClasses = ["TimeBombCore","BombCore", "Grenade"];
+publicVariable "explosiveSuperClasses";
+
+projectilesToIgnore = ["SmokeShell", "FlareCore", "IRStrobeBase", "GrenadeHand_stone", "Smoke_120mm_AMOS_White", "TMR_R_DG32V_F"];
+publicVariable "projectilesToIgnore";
+
+call compile preprocessFileLineNumbers "EPD\Ied_Settings.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\ExplosionFunctions.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\CreationFunctions.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\ExplosionEffects.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\CreationAuxiliaryFunctions.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\ExplosivesHandler.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\Disarm.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\DictionaryFunctions.sqf";
+call compile preprocessFileLineNumbers "EPD\IED\TriggerCheck.sqf";
+
 
 iedSecondaryItemsCount = count iedSecondaryItems;
 iedSmallItemsCount = count iedSmallItems;
@@ -43,25 +37,74 @@ iedMediumItemsCount = count iedMediumItems;
 iedLargeItemsCount = count iedLargeItems;
 
 if(isserver) then {
-	_script = iedArray call IED;
+	
+	call GET_PLACES_OF_INTEREST;
+	
+	iedSafeRoads = [];
+	{
+		_locationAndSize = (_x) call GET_CENTER_LOCATION_AND_SIZE;
+		_roads = ((_locationAndSize select 0) nearRoads (_locationAndSize select 1));
+		iedSafeRoads = (iedSafeRoads - _roads) + _roads; //removes duplicates first
+	} foreach iedSafeZones;
+	
+	_handles = [];
+	_nextHandleSpot = 0;
+
+	{
+		switch(toUpper(_x select 0)) do {
+			case "ALL": {
+					_keys = iedAllMapLocations call Dictionary_fnc_keys;
+					_side = _x select 1;
+					{
+						_handles set [_nextHandleSpot, [[_x,_side]] spawn CREATE_IED_SECTION];
+						_nextHandleSpot = _nextHandleSpot + 1;
+					} foreach _keys;
+				};
+			case "ALLCITIES": {
+					_keys = iedCityMapLocations call Dictionary_fnc_keys;
+					_side = _x select 1;
+					{
+						_handles set [_nextHandleSpot, [[_x,_side]] spawn CREATE_IED_SECTION];
+						_nextHandleSpot = _nextHandleSpot + 1;
+					} foreach _keys;
+				};
+			case "ALLVILLAGES": {
+					_keys = iedVillageMapLocations call Dictionary_fnc_keys;
+					_side = _x select 1;
+					{
+						_handles set [_nextHandleSpot, [[_x,_side]] spawn CREATE_IED_SECTION];
+						_nextHandleSpot = _nextHandleSpot + 1;
+					} foreach _keys;
+				};
+			case "ALLLOCALS": {
+					_keys = iedLocalMapLocations call Dictionary_fnc_keys;
+					_side = _x select 1;
+					{
+						_handles set [_nextHandleSpot, [[_x,_side]] spawn CREATE_IED_SECTION];
+						_nextHandleSpot = _nextHandleSpot + 1;
+					} foreach _keys;
+				};
+			default	{
+				_handles set [_nextHandleSpot, [_x] spawn CREATE_IED_SECTION];
+				_nextHandleSpot = _nextHandleSpot + 1;
+			};
+		};
+		
+	} foreach iedInitialArray;
+	
+	waituntil{sleep .5; [_handles] call CHECK_ARRAY;};
+	
+	//_script = iedArray call IED;
+	publicVariable "iedDictionary";
 	
 	iedsAdded = true;
 	publicVariable "iedsAdded";
-	//free some memory
-	safeRoads = nil;
-	predefinedLocations = nil;
-	placesOfInterest = nil;
-	cities = nil;
-	villages = nil;
-	locals = nil;
-
+	
+	
 };
 
 waituntil{sleep .5; (!isnull player and iedsAdded)};
 player sidechat "Synching IEDs... You may experience lag for a few seconds";
-//hint format["%1 ieds to synch", count eventHandlers];
 
-for "_i" from 0 to (count eventHandlers) -1 do{
-	call compile (eventHandlers select _i);
-	if(EPD_IED_debug) then {player sidechat (format["%1 synched", _i+1]);};
-};
+[] call ADD_DISARM_AND_PROJECTILE_DETECTION;
+
