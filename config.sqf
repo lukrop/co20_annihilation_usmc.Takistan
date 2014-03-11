@@ -57,40 +57,40 @@ switch(param_enemy_faction) do {
 	// CAF Aggressors middle eastern
 	case 2: {
 		// enemy infantry group leaders
-		lkr_enemy_inf_leaders_C = ["CAF_AG_ME_AK74", "CAF_AG_ME_GL"];
+		lkr_enemy_inf_leaders_C = ["CAF_AG_ME_T_AK74", "CAF_AG_ME_T_GL"];
 		// repeat akm dudes to increase their saturation
-		lkr_enemy_inf_units_C = ["CAF_AG_ME_AK74", "CAF_AG_ME_AK47", "CAF_AG_ME_RPG", "CAF_AG_ME_RPK",
-			"CAF_AG_ME_SVD", "CAF_AG_ME_PK", "CAF_AG_ME_AK47", "CAF_AG_ME_RPG", "CAF_AG_ME_AK47",
-			"CAF_AG_ME_AK47", "CAF_AG_ME_AK47", "CAF_AG_ME_AK74", "CAF_AG_ME_GL"];
+		lkr_enemy_inf_units_C = ["CAF_AG_ME_T_AK74", "CAF_AG_ME_T_AK47", "CAF_AG_ME_T_RPG", "CAF_AG_ME_T_RPK74",
+			"CAF_AG_ME_T_SVD", "CAF_AG_ME_T_PKM", "CAF_AG_ME_T_AK47", "CAF_AG_ME_T_RPG", "CAF_AG_ME_T_AK47",
+			"CAF_AG_ME_T_AK47", "CAF_AG_ME_T_AK47", "CAF_AG_ME_T_AK74", "CAF_AG_ME_T_GL"];
 		// enemy vehicles
-		lkr_enemy_vecs_C = ["CAF_AG_ME_Offroad_armed_01"];
+		lkr_enemy_vecs_C = ["CAF_AG_ME_T_Offroad_armed_01"];
 
-		lkr_hvt_C = "CAF_AG_EUR_AK74";
-		lkr_hvt_guard_C = "CAF_AG_ME_AK74";
+		lkr_hvt_C = "CAF_AG_EEUR_R_AK74";
+		lkr_hvt_guard_C = "CAF_AG_ME_T_AK74";
 
 	};
 	// CAF Aggressors eastern europe
 	case 3: {
 		// enemy infantry group leaders
-		lkr_enemy_inf_leaders_C = ["CAF_AG_EUR_AK74", "CAF_AG_EUR_GL"];
+		lkr_enemy_inf_leaders_C = ["CAF_AG_EEUR_R_AK74", "CAF_AG_EEUR_R_GL"];
 		// repeat akm dudes to increase their saturation
-		lkr_enemy_inf_units_C = ["CAF_AG_EUR_AK74", "CAF_AG_EUR_AK47", "CAF_AG_EUR_RPG", "CAF_AG_EUR_RPK",
-			"CAF_AG_EUR_SVD", "CAF_AG_EUR_PK", "CAF_AG_EUR_AK47", "CAF_AG_EUR_RPG", "CAF_AG_EUR_AK47",
-			"CAF_AG_EUR_AK47", "CAF_AG_EUR_AK47", "CAF_AG_EUR_AK74", "CAF_AG_EUR_GL"];
+		lkr_enemy_inf_units_C = ["CAF_AG_EEUR_R_AK74", "CAF_AG_EEUR_R_AK47", "CAF_AG_EEUR_R_RPG", "CAF_AG_EEUR_R_RPK74",
+			"CAF_AG_EEUR_R_SVD", "CAF_AG_EEUR_R_PKM", "CAF_AG_EEUR_R_AK47", "CAF_AG_EEUR_R_RPG", "CAF_AG_EEUR_R_AK47",
+			"CAF_AG_EEUR_R_AK47", "CAF_AG_EEUR_R_AK47", "CAF_AG_EEUR_R_AK74", "CAF_AG_EEUR_R_GL"];
 		// enemy vehicles
-		lkr_enemy_vecs_C = ["CAF_AG_EUR_Offroad_armed_01"];
+		lkr_enemy_vecs_C = ["CAF_AG_EEUR_R_Offroad_armed_01"];
 
-		lkr_hvt_C = "CAF_AG_AFR_AK74";
-		lkr_hvt_guard_C = "CAF_AG_EUR_AK74";
+		lkr_hvt_C = "CAF_AG_AFR_P_AK74";
+		lkr_hvt_guard_C = "CAF_AG_EEUR_R_AK74";
 	};
 	// CAF Aggressors african
 	case 4: {
 		// enemy infantry group leaders
-		lkr_enemy_inf_leaders_C = ["CAF_AG_AFR_AK74", "CAF_AG_AFR_GL"];
+		lkr_enemy_inf_leaders_C = ["CAF_AG_AFR_P_AK74", "CAF_AG_AFR_P_GL"];
 		// repeat akm dudes to increase their saturation
-		lkr_enemy_inf_units_C = ["CAF_AG_AFR_AK74", "CAF_AG_AFR_AK47", "CAF_AG_AFR_RPG", "CAF_AG_AFR_RPK",
-			"CAF_AG_AFR_SVD", "CAF_AG_AFR_PK", "CAF_AG_AFR_AK47", "CAF_AG_AFR_RPG", "CAF_AG_AFR_AK47",
-			"CAF_AG_AFR_AK47", "CAF_AG_AFR_AK47", "CAF_AG_AFR_AK74", "CAF_AG_AFR_GL"];
+		lkr_enemy_inf_units_C = ["CAF_AG_AFR_P_AK74", "CAF_AG_AFR_P_AK47", "CAF_AG_AFR_P_RPG", "CAF_AG_AFR_P_RPK74",
+			"CAF_AG_AFR_P_SVD", "CAF_AG_AFR_P_PKM", "CAF_AG_AFR_P_AK47", "CAF_AG_AFR_P_RPG", "CAF_AG_AFR_P_AK47",
+			"CAF_AG_AFR_P_AK47", "CAF_AG_AFR_P_AK47", "CAF_AG_AFR_P_AK74", "CAF_AG_AFR_P_GL"];
 		// enemy vehicles
 		lkr_enemy_vecs_C = ["CAF_AG_AFR_Offroad_armed_01"];
 
