@@ -61,3 +61,7 @@ if(param_vec_respawn == 1) then {
 		lkr_veh_5, lkr_veh_6, lkr_veh_7, lkr_veh_8, lkr_veh_9,
 		lkr_veh_10, lkr_veh_11, lkr_veh_12];
 };
+
+if(param_enemy_ambient_patrols == 1) then {
+	objNull spawn lkr_fnc_spawnAmbientPatrols;
+}

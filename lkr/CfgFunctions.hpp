@@ -11,18 +11,19 @@ class lkr
 		file = "lkr\common";
 		
 		class loadConfig {
-			preInit=1;
+			preInit = 1;
 		};
 		class initMHQ {};
 		class spawnGroup {};
 		class spawnEnemyGroup {};
 		class groupExecuteTask {};
 		class hideMarkers {
-			preInit=1;
-			postInit=1;
+			preInit = 1;
+			postInit = 1;
 		};
 		class changeMarker {};
 		class getNumberBetween {};
+		class spawnAmbientPatrols {};
 	};
 
 	class missionHelper {
@@ -42,7 +43,9 @@ class lkr
 	{
 		file = "lkr\gc";
 
-		class gcInit {postInit=1}; // starts the garbage collector
+		class gcInit {
+			postInit = 1; // starts the garbage collector
+		}; 
 		class gcMonitor {};
 		class gcAdd {};
 		class gcEmptyQueue {};
@@ -54,7 +57,9 @@ class lkr
 	{
 		file = "lkr\mm";
 
-		class mmInit {postInit=1}; // starts the mission manager
+		class mmInit {
+			postInit = 1; // starts the mission manager
+		}; 
 		class mmLoop {};
 		class mmChooseMission {};
 		class mmRunMission {};
