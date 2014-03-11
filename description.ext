@@ -43,6 +43,7 @@ class CfgFunctions
 	#include "taw_vd\CfgFunctions.hpp"
 	#include "f\CfgFunctions.hpp"
 	#include "lkr\CfgFunctions.hpp"
+	#include "EPD\CfgFunctions.hpp"
 };
 
 #include "VAS\menu.hpp"

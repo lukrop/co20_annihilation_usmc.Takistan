@@ -1,15 +1,15 @@
 /***************SETTINGS***********************/
-EPD_IED_debug = true;
+EPD_IED_debug = false;
 hideIedSectionMarkers = true;  //sets the alpha to 0 after spawning IEDs at a section
 hideSafeZoneMarkers = true;  //sets the alpha to 0 of a safezone
 
 itemsRequiredToDisarm = ["ToolKit"];   //"MineDetector" or "ToolKit" for example
 betterDisarmers = ["B_soldier_exp_F", "B_engineer_F", "B_diver_exp_F", "B_recon_exp_F"]; // people who are better at disarming
 
-baseDisarmChance = 75; //how well everybody can disarm
-bonusDisarmChance = 20; //increase that the "betterDisarmers" get
+baseDisarmChance = 80; //how well everybody can disarm
+bonusDisarmChance = 15; //increase that the "betterDisarmers" get
 
-secondaryChance = 50; //Chance that a secondary IED will spawn.
+secondaryChance = 40; //Chance that a secondary IED will spawn.
 
 smallChance = 40; //Chance that a small IED will be chosen.
 mediumChance = 40; //Chance that a medium IED will be chosen.
